@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const foodRoutes = require("./routes/foodRoutes"); // Import routes
+const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 
@@ -17,7 +17,7 @@ mongoose
     .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Routes
-app.use("/api/foods", foodRoutes); // Use food routes
+app.use("/api/products", productRoutes);
 
 // Basic route
 app.get("/", (req, res) => {
